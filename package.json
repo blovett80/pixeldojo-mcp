@@ -1,0 +1,81 @@
+{
+  "name": "@pixeldojo/mcp",
+  "version": "0.16.3",
+  "description": "MCP server for PixelDojo image and video generation. One install for Claude Code, Cursor, OpenClaw.",
+  "mcpName": "ai.pixeldojo/mcp",
+  "homepage": "https://pixeldojo.ai/skills",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blovett80/pixeldojo-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/blovett80/pixeldojo-mcp/issues",
+    "email": "support@pixeldojo.ai"
+  },
+  "author": "PixelDojo <support@pixeldojo.ai> (https://pixeldojo.ai)",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "bin": {
+    "pixeldojo-mcp": "./bin/pixeldojo-mcp.js"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "claude",
+    "claude-code",
+    "cursor",
+    "openclaw",
+    "ai",
+    "image-generation",
+    "video-generation",
+    "pixeldojo",
+    "mcp-server",
+    "audio-generation",
+    "text-to-image",
+    "text-to-video",
+    "ai-agents"
+  ],
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.4.1",
+    "@pixeldojo/sdk": "^0.6.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "ai.pixeldojo/mcp",
+  "title": "PixelDojo",
+  "description": "Generate images, video, audio and short films with 140+ AI models from any MCP client.",
+  "version": "0.16.3",
+  "websiteUrl": "https://pixeldojo.ai/skills",
+  "repository": { "url": "https://github.com/blovett80/pixeldojo-mcp", "source": "github" },
+  "icons": [{ "src": "https://pixeldojo.ai/pdlogo.png", "mimeType": "image/png", "sizes": ["1025x1025"] }],
+  "remotes": [
+    { "type": "streamable-http", "url": "https://pixeldojo.ai/mcp" }
+  ],
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "@pixeldojo/mcp",
+      "version": "0.16.3",
+      "runtimeHint": "npx",
+      "transport": { "type": "stdio" },
+      "environmentVariables": [
+        {
+          "name": "PIXELDOJO_API_KEY",
+          "description": "PixelDojo API key (starts with pd_). Create one at https://pixeldojo.ai/api-platform/api-keys",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}
